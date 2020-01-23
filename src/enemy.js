@@ -1,6 +1,5 @@
 class Enemy {
   constructor() {
-    this.img = loadImage("assets/broco.png");
     this.x = random(20, width - 20);
     this.y = 10;
     this.width = 40;
@@ -21,13 +20,8 @@ class Enemy {
       game.brococounter = game.brococounter + 20;
       fatigue.play();
       game.enemies.splice(game.enemies.indexOf(this), 1);
-      console.log("loosing a point", game.character, this);
-      console.log("Your broco score is=" + game.brococounter);
-
-      //console.log(game.balls);
-      //add a condition->once it is out of the screen remove from the array
     }
-    image(this.img, this.x, this.y + this.speed, this.width, this.height);
+    image(enemybroco, this.x, this.y + this.speed, this.width, this.height);
 
     this.y = this.y + this.speed;
 

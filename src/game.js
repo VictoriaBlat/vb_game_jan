@@ -5,6 +5,7 @@ class Game {
     this.brococounter = 0;
     this.enemies = [];
     this.finished = false;
+    this.button;
   }
 
   init() {
@@ -16,15 +17,17 @@ class Game {
     if (this.counter >= 100) {
       this.finished = true;
       background(gameOverPicture);
-      console.log("finished");
       this.balls.length = 0;
+      //buttonON = true;
+
+      justDoIt();
     } else if (this.brococounter >= 100) {
       this.finished = true;
       background(brocoGameOver);
-      console.log("finished broco");
-
+      textStyle(BOLD);
       textSize(100);
-      text("Good Job!", 200, 200);
+      text("Good Job!", 320, 200);
+      justDoIt();
     } else if (this.counter < 100) {
       background(pictureX);
       this.character.draw();
@@ -46,20 +49,12 @@ class Game {
       });
       textSize(20);
       fill(255, 255, 255);
-      text("SCORE: " + this.counter, 470, 20);
+      text("MUNCHIES: " + this.counter, 500, 20);
+      text("VEGIES: " + this.brococounter, 60, 20);
     }
   }
 
-  gameEnded() {
-    if (this.counter === 100) {
-      this.finished = true;
-      console.log("finished call");
-      fill(255, 255, 255);
-      text("GAME OVER", 500, 20);
-    }
-  }
   setup() {
     this.character.setup();
-    //this.sound.play();
   }
 }
