@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.balls = [];
     this.counter = 0;
+    this.brococounter = 0;
     this.enemies = [];
     this.finished = false;
   }
@@ -12,11 +13,18 @@ class Game {
   }
 
   draw() {
-    if (this.counter === 100) {
+    if (this.counter >= 100) {
       this.finished = true;
       background(gameOverPicture);
       console.log("finished");
       this.balls.length = 0;
+    } else if (this.brococounter >= 100) {
+      this.finished = true;
+      background(brocoGameOver);
+      console.log("finished broco");
+
+      textSize(100);
+      text("Good Job!", 200, 200);
     } else if (this.counter < 100) {
       background(pictureX);
       this.character.draw();
@@ -36,8 +44,9 @@ class Game {
       this.balls.forEach(function(ball) {
         ball.draw();
       });
+      textSize(20);
       fill(255, 255, 255);
-      text("SCORE: " + this.counter, 500, 20);
+      text("SCORE: " + this.counter, 470, 20);
     }
   }
 
@@ -45,7 +54,7 @@ class Game {
     if (this.counter === 100) {
       this.finished = true;
       console.log("finished call");
-      ill(255, 255, 255);
+      fill(255, 255, 255);
       text("GAME OVER", 500, 20);
     }
   }

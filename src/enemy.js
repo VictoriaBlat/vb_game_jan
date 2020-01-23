@@ -18,11 +18,11 @@ class Enemy {
       // //this.x - game.character.size <= game.character.x <= this.x + this.width
       //
     ) {
-      game.counter = game.counter - 50;
+      game.brococounter = game.brococounter + 20;
       fatigue.play();
       game.enemies.splice(game.enemies.indexOf(this), 1);
       console.log("loosing a point", game.character, this);
-      console.log("Your score is=" + game.counter);
+      console.log("Your broco score is=" + game.brococounter);
 
       //console.log(game.balls);
       //add a condition->once it is out of the screen remove from the array
