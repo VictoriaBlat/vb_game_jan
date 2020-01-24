@@ -10,7 +10,6 @@ class Game {
 
   init() {
     this.character = new Character();
-    // this.sound = loadSound("assets/Get Lucky.mp3");
   }
 
   draw() {

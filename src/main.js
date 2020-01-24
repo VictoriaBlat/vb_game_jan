@@ -7,7 +7,7 @@ let song;
 let obstaclesImages = [];
 let gameStarted = false;
 let startingText =
-  "Your character is very hungry!\n Collect some food but remember to choose wisely!\n PRESS space button to start the Game!";
+  "Your character is very hungry!\n Collect some food but remember to choose wisely!\n Navigate the player with your mouse\n or with the left & right arrow. \nPRESS space button to start the Game!";
 let buttonON = false;
 let enemybroco;
 let evilLaugh;
@@ -15,18 +15,15 @@ let evilLaugh;
 
 function keyPressed() {
   if (keyCode === 39) {
-    console.log("pressed");
     game.character.moveRight();
   } else if (keyCode === 37) {
     game.character.moveLeft();
   } else if (keyCode === 32) {
-    console.log("pressed");
     gameStart();
   }
 }
 function gameStart() {
   gameStarted = true;
-  console.log("executed");
 }
 
 const game = new Game();
@@ -57,7 +54,7 @@ function draw() {
   textSize(20);
   textAlign(CENTER, BASELINE);
   fill(255, 255, 255);
-  text(startingText, 300, 300);
+  text(startingText, 300, 285);
 
   if (gameStarted === true) {
     background(pictureX);
